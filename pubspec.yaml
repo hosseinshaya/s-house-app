@@ -126,11 +126,11 @@ flutter:
           weight: 100
     - family: iranSans
       fonts:
-        - asset: resources/fonts/iran-sans/Black.ttf
+        - asset: resources/fonts/iran-sans/ExtraBlack.ttf
           weight: 900
         - asset: resources/fonts/iran-sans/Black.ttf
           weight: 800
-        - asset: resources/fonts/iran-sans/Bold.ttf
+        - asset: resources/fonts/iran-sans/ExtraBold.ttf
           weight: 700
         - asset: resources/fonts/iran-sans/Bold.ttf
           weight: 600
@@ -142,5 +142,5 @@ flutter:
           weight: 300
         - asset: resources/fonts/iran-sans/Light.ttf
           weight: 200
-        - asset: resources/fonts/iran-sans/UltraLight.ttf
+        - asset: resources/fonts/iran-sans/Thin.ttf
           weight: 100
