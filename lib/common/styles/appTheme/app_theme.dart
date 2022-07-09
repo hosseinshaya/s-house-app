@@ -42,7 +42,7 @@ class AppTheme {
             height: 1.5,
             letterSpacing: 0,
             color: ColorPalette.dark.textPrimary,
-            fontFamily: Fonts.yekanBakh,
+            fontFamily: Fonts.iranSans,
             fontWeight: FontWeight.w900),
       ).headline6,
       titleSpacing: 0,
@@ -54,12 +54,12 @@ class AppTheme {
       labelStyle: const TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w700,
-        fontFamily: Fonts.yekanBakh,
+        fontFamily: Fonts.iranSans,
       ),
       unselectedLabelStyle: const TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w500,
-        fontFamily: Fonts.yekanBakh,
+        fontFamily: Fonts.iranSans,
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
