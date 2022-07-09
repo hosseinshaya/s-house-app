@@ -60,5 +60,8 @@ abstract class  LocaleKeys {
   static const validator_priceCanNotBeLess = 'validator.priceCanNotBeLess';
   static const validator_priceCanNotBeMore = 'validator.priceCanNotBeMore';
   static const validator = 'validator';
+  static const main_titlePrefix = 'main.titlePrefix';
+  static const main_title = 'main.title';
+  static const main = 'main';
 
 }

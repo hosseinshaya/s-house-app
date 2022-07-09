@@ -68,5 +68,9 @@
     "priceMoreThanAllowed": "Price is more than allowed!",
     "priceCanNotBeLess": "Price can't be less that {} Toman!",
     "priceCanNotBeMore": "Price can't be more that {} Toman!"
+  },
+  "main": {
+    "titlePrefix": "Welcome back",
+    "title": "Home"
   }
 }
