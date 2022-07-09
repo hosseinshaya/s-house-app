@@ -1,0 +1,72 @@
+{
+  "language": "فارسی",
+  "common": {
+    "edit": "ویرایش",
+    "submit": "تایید",
+    "cancel": "لغو",
+    "color": "رنگ",
+    "package": "مرسوله",
+    "seeMore": "مشاهده بیشتر",
+    "more": "بیشتر",
+    "seeLess": "مشاهده کمتر",
+    "sortBy": "مرتب سازی بر اساس",
+    "continue": "ادامه",
+    "free": "رایگان",
+    "currency": "ت",
+    "soon": "به زودی!",
+    "max": "حداکثر",
+    "clear": "پاک کردن",
+    "clearAll": "پاک کردن همه",
+    "applyFilter": "اعمال فیلتر",
+    "enter": "ورود",
+    "gender": {
+      "male": "آقا",
+      "female": "خانم",
+      "unspecified": "تعیین نشده"
+    },
+    "datePicker": {
+      "cancel": "لغو",
+      "confirm": "تایید"
+    },
+    "later": "بعدا",
+    "feedback": "بازخورد",
+    "button": {
+      "submit": "ثبت",
+      "cancel": "لغو"
+    },
+    "comingSoon": "بزودی",
+    "options": "گزینه ها",
+    "nothingFound": "موردی یافت نشد",
+    "relativeTime": {
+      "fewMoments": "چند ثانیه پیش",
+      "aMinute": "یک دقیقه پیش",
+      "minutes": "{m} دقیقه پیش",
+      "anHour": "یک ساعت پیش",
+      "hours": "{h} ساعت پیش",
+      "aDay": "یک روز پیش",
+      "days": "{d} روز پیش",
+      "aMonth": "یک ماه پیش",
+      "months": "{m} ماه پیش",
+      "aYear": "یک سال پیش",
+      "years": "{y} سال پیش"
+    },
+    "choose": "انتخاب کنید"
+  },
+  "err": {
+    "tryAgain": "مشکلی پیش آمده، لطفا دوباره تلاش کنید"
+  },
+  "errPage": {
+    "title": "صفحه ای یافت نشد",
+    "description": "ممکن است آدرس اشتباه وارد شده باشد یا صفحه پاک شده باشد",
+    "goBack": "بازگشت"
+  },
+  "validator": {
+    "requiredField": "فیلد اجباری میباشد",
+    "wrongPhoneNumber": "شماره موبایل اشتباه است",
+    "onlyNumbers": "فقط مقادیر عددی مجاز است",
+    "nationalNumberInvalid": "کد ملی نامعتبر میباشد",
+    "priceMoreThanAllowed": "مبلغ وارد شده بیشتر از حد مجاز است!",
+    "priceCanNotBeLess": "قیمت نمیتواند کمتر از {} تومان باشد!",
+    "priceCanNotBeMore": "قیمت نمیتواند بیشتر از {} تومان باشد!"
+  }
+}

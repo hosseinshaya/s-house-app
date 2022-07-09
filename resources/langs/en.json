@@ -1,0 +1,72 @@
+{
+  "language": "English",
+  "common": {
+    "edit": "Edit",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "color": "Color",
+    "package": "Package",
+    "seeMore": "See more",
+    "more": "More",
+    "seeLess": "See less",
+    "sortBy": "Sort by",
+    "continue": "Continue",
+    "free": "For Free",
+    "currency": "T",
+    "soon": "Coming soon!",
+    "max": "Maximum",
+    "clear": "Clear",
+    "clearAll": "Clear all",
+    "applyFilter": "Apply filter",
+    "enter": "Enter",
+    "gender": {
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    },
+    "datePicker": {
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "later": "Later",
+    "feedback": "Feedback",
+    "button": {
+      "submit": "Submit",
+      "cancel": "Cancel"
+    },
+    "comingSoon": "Coming soon",
+    "options": "Options",
+    "nothingFound": "Nothing found",
+    "relativeTime": {
+      "fewMoments": "a few seconds ago",
+      "aMinute": "a minute ago",
+      "minutes": "{m} minutes ago",
+      "anHour": "an hour ago",
+      "hours": "{h} hours ago",
+      "aDay": "a day ago",
+      "days": "{d} days ago",
+      "aMonth": "a month ago",
+      "months": "{m} months ago",
+      "aYear": "a year ago",
+      "years": "{y} years ago"
+    },
+    "choose": "Choose"
+  },
+  "err": {
+    "tryAgain": "Oops, There is a problem, Please try again"
+  },
+  "errPage": {
+    "title": "Page not found",
+    "description": "Maybe a wrong address have entered or the page may have been deleted",
+    "goBack": "Go Back"
+  },
+  "validator": {
+    "requiredField": "This field is required",
+    "wrongPhoneNumber": "Phone number is wrong",
+    "onlyNumbers": "Only numbers accept",
+    "nationalNumberInvalid": "National number is invalid",
+    "priceMoreThanAllowed": "Price is more than allowed!",
+    "priceCanNotBeLess": "Price can't be less that {} Toman!",
+    "priceCanNotBeMore": "Price can't be more that {} Toman!"
+  }
+}
