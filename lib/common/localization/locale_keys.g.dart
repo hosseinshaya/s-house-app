@@ -63,5 +63,7 @@ abstract class  LocaleKeys {
   static const main_titlePrefix = 'main.titlePrefix';
   static const main_title = 'main.title';
   static const main = 'main';
+  static const settings_title = 'settings.title';
+  static const settings = 'settings';
 
 }

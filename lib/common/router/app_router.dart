@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:s_house/common/router/ui/err_page.dart';
 import 'package:s_house/modules/main/ui/pages/main_page.dart';
+import 'package:s_house/modules/settings/ui/pages/settings_page.dart';
 
 class R {
   static const String main = '/';
+  static const String settings = '/settings';
 }
 
 class AppRouter {
@@ -21,6 +23,7 @@ class AppRouter {
     ),
     routes: <GoRoute>[
       _route(path: R.main, pageBuilder: (state) => const MainPage()),
+      _route(path: R.settings, pageBuilder: (state) => const SettingsPage()),
     ],
   );
 

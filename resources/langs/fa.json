@@ -72,5 +72,8 @@
   "main": {
     "titlePrefix": "به خونه",
     "title": "خوش اومدی"
+  },
+  "settings": {
+    "title": "تنظیمات"
   }
 }

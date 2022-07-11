@@ -72,5 +72,8 @@
   "main": {
     "titlePrefix": "Welcome back",
     "title": "Home"
+  },
+  "settings": {
+    "title": "Settings"
   }
 }
