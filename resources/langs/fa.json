@@ -77,6 +77,14 @@
     "title": "تنظیمات"
   },
   "items": {
-    "addItem": "افزودن آیتم"
+    "addItem": "افزودن آیتم",
+    "submit": "ثبت",
+    "form": {
+      "faName": "نام فارسی",
+      "faNameHint": "مثلا \"لامپ آشپزخانه\"",
+      "enName": "نام انگلیسی",
+      "enNameHint": "مثلا \"Kitchen Light\"",
+      "pin": "پین"
+    }
   }
 }

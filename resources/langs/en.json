@@ -77,6 +77,14 @@
     "title": "Settings"
   },
   "items": {
-    "addItem": "Add Item"
+    "addItem": "Add Item",
+    "submit": "Submit",
+    "form": {
+      "faName": "Persian name",
+      "faNameHint": "For example \"لامپ آشپزخانه\"",
+      "enName": "English name",
+      "enNameHint": "For example \"Kitchen Light\"",
+      "pin": "Pin"
+    }
   }
 }

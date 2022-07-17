@@ -67,22 +67,24 @@ class CinButtonState extends State<CinButton> {
           minWidth: widget.minWidth == null ? 0 : widget.minWidth!,
         ),
         child: ElevatedButton(
-          onPressed: !finalLoading && widget.enabled
-              ? () async {
-                  if (mounted) {
-                    setState(() => loading = true);
-                  }
-                  FocusScope.of(context).requestFocus(FocusNode());
-                  try {
-                    await widget.onPressed();
-                  } catch (e) {
-                    e.errLog();
-                  }
-                  if (mounted) {
-                    setState(() => loading = false);
-                  }
-                }
-              : () {},
+          onPressed: widget.enabled
+              ? (!finalLoading
+                  ? () async {
+                      if (mounted) {
+                        setState(() => loading = true);
+                      }
+                      FocusScope.of(context).requestFocus(FocusNode());
+                      try {
+                        await widget.onPressed();
+                      } catch (e) {
+                        e.errLog();
+                      }
+                      if (mounted) {
+                        setState(() => loading = false);
+                      }
+                    }
+                  : () {})
+              : null,
           style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
                 elevation: MaterialStateProperty.resolveWith(
                     (Set<MaterialState> states) {
@@ -133,6 +135,9 @@ class CinButtonState extends State<CinButton> {
                     : widget.enabled
                         ? ColorPalette.of(context).textCaption
                         : ColorPalette.of(context).textDisabled);
+            if (!widget.enabled) {
+              foregroundColor = foregroundColor.withOpacity(0.3); // todo
+            }
             return Switcher(
                 child: finalLoading
                     ? Center(

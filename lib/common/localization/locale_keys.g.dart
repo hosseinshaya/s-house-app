@@ -66,6 +66,13 @@ abstract class  LocaleKeys {
   static const settings_title = 'settings.title';
   static const settings = 'settings';
   static const items_addItem = 'items.addItem';
+  static const items_submit = 'items.submit';
+  static const items_form_faName = 'items.form.faName';
+  static const items_form_faNameHint = 'items.form.faNameHint';
+  static const items_form_enName = 'items.form.enName';
+  static const items_form_enNameHint = 'items.form.enNameHint';
+  static const items_form_pin = 'items.form.pin';
+  static const items_form = 'items.form';
   static const items = 'items';
 
 }

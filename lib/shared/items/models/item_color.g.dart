@@ -1,35 +1,41 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'multi_lang_text.dart';
+part of 'item_color.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class MultiLangTextAdapter extends TypeAdapter<MultiLangText> {
+class ItemColorAdapter extends TypeAdapter<ItemColor> {
   @override
-  final int typeId = 1;
+  final int typeId = 2;
 
   @override
-  MultiLangText read(BinaryReader reader) {
+  ItemColor read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return MultiLangText(
-      fa: fields[0] as String?,
-      en: fields[1] as String?,
+    return ItemColor(
+      fields[0] as Color,
+      fields[1] as Color,
+      fields[2] as Color,
+      fields[3] as Color,
     );
   }
 
   @override
-  void write(BinaryWriter writer, MultiLangText obj) {
+  void write(BinaryWriter writer, ItemColor obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(4)
       ..writeByte(0)
-      ..write(obj.fa)
+      ..write(obj.main)
       ..writeByte(1)
-      ..write(obj.en);
+      ..write(obj.light)
+      ..writeByte(2)
+      ..write(obj.dark)
+      ..writeByte(3)
+      ..write(obj.background);
   }
 
   @override
@@ -38,7 +44,7 @@ class MultiLangTextAdapter extends TypeAdapter<MultiLangText> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is MultiLangTextAdapter &&
+      other is ItemColorAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

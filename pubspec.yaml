@@ -83,6 +83,7 @@ flutter:
     - assets/vectors/
     - assets/emojis/
     - assets/launcher/
+    - assets/lightImages/
   fonts:
     - family: yekanBakh
       fonts:

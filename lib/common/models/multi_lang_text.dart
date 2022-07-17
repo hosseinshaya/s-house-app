@@ -8,20 +8,20 @@ part 'multi_lang_text.g.dart';
 @HiveType(typeId: HiveId.multiLangText)
 class MultiLangText {
   @HiveField(0)
-  final String fa;
+  String? fa;
   @HiveField(1)
-  final String en;
+  String? en;
 
-  MultiLangText(this.fa, this.en);
+  MultiLangText({this.fa, this.en});
 
   String tr(BuildContext context) {
     switch (context.locale.languageCode) {
       case 'fa':
-        return fa;
+        return fa!;
       case 'en':
-        return en;
+        return en!;
       default:
-        return fa;
+        return fa!;
     }
   }
 }
