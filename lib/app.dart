@@ -8,6 +8,7 @@ import 'package:s_house/common/constants/app_config.dart';
 import 'package:s_house/common/router/app_router.dart';
 import 'package:s_house/common/styles/appTheme/app_theme.dart';
 import 'package:s_house/common/styles/colorPalette/color_palette.dart';
+import 'package:s_house/shared/items/blocs/items_bloc.dart';
 
 import 'common/localization/locale_keys.g.dart';
 import 'common/utils/app_scroll_behavior.dart';
@@ -22,6 +23,7 @@ class App extends StatelessWidget {
             lazy: false,
             create: (BuildContext createContext) => AppRouter(),
           ),
+          ChangeNotifierProvider(create: (context) => ItemsBloc()),
         ],
         child: EasyLocalization(
           supportedLocales: AppConfig.supportedLocales,

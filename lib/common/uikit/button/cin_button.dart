@@ -157,7 +157,7 @@ class CinButtonState extends State<CinButton> {
                                         .button!
                                         .copyWith(
                                             color: foregroundColor,
-                                            fontWeight: FontWeight.w800)),
+                                            fontWeight: FontWeight.w700)),
                             ],
                           ),
                         )));

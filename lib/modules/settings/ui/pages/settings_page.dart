@@ -10,8 +10,10 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => CinPage(
         title: LocaleKeys.settings_title.tr(),
+        childrenPadding: const EdgeInsets.all(12),
         children: [
           CinButton(
+            text: LocaleKeys.items_addItem.tr(),
             onPressed: () async {},
           ),
         ],

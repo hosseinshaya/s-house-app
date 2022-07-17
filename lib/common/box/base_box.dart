@@ -71,6 +71,10 @@ class BaseBox<T> {
 
   void addAll(Iterable<T> values) => _box.addAll(values);
 
+  void add(T value) => _box.add(value);
+
+  Iterable<T> get values => _box.values;
+
   void setFirst(T value) => _box.clear().then((_) => _box.add(value)); // TODO
 
   Iterable<String>? get keys => _box.keys as Iterable<String>?;

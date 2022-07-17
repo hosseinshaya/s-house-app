@@ -75,5 +75,8 @@
   },
   "settings": {
     "title": "Settings"
+  },
+  "items": {
+    "addItem": "Add Item"
   }
 }

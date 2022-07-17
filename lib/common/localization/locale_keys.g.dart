@@ -65,5 +65,7 @@ abstract class  LocaleKeys {
   static const main = 'main';
   static const settings_title = 'settings.title';
   static const settings = 'settings';
+  static const items_addItem = 'items.addItem';
+  static const items = 'items';
 
 }
