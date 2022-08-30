@@ -16,6 +16,9 @@ class ItemColor {
         colorMode.background,
       );
 
+  ColorMode toColorMode() =>
+      ColorMode(main: main, light: light, dark: dark, background: background);
+
   @HiveField(0)
   final Color main;
   @HiveField(1)

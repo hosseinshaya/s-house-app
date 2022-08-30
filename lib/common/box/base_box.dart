@@ -24,8 +24,10 @@ class LazyBaseBox<T> {
     }
   }
 
-  void addAll(Iterable<T> values) => _box.addAll(values);
+  // void addAll(Iterable<T> values) => _box.addAll(values);
   Iterable<String>? get keys => _box.keys as Iterable<String>?;
+
+  void add(T value) => _box.add(value);
 
   void remove(String key) => _box.delete(key);
   Future<void> close() async => _box.close();
@@ -40,6 +42,8 @@ class LazyBaseBox<T> {
     }
     return (_box as LazyBox<T>?)?.getAt(0);
   }
+
+  Future<void> put(dynamic key, T value) async => await _box.put(key, value);
 
   bool containsKey(String key) => _box.containsKey(key);
   Future<T?> operator [](String key) async => (_box as LazyBox<T>?)?.get(key);
@@ -61,9 +65,9 @@ class BaseBox<T> {
 
   void clear() => _box.clear();
 
-  Future<void> removeWhere(bool Function(String key, T? value) test) async {
+  Future<void> removeWhere(bool Function(dynamic key, T? value) test) async {
     for (var key in _box.keys) {
-      if (test(key as String, _box.get(key))) {
+      if (test(key, _box.get(key))) {
         _box.delete(key);
       }
     }
@@ -71,13 +75,13 @@ class BaseBox<T> {
 
   void addAll(Iterable<T> values) => _box.addAll(values);
 
-  void add(T value) => _box.add(value);
+  Future<void> put(dynamic key, T value) async => await _box.put(key, value);
 
   Iterable<T> get values => _box.values;
 
   void setFirst(T value) => _box.clear().then((_) => _box.add(value)); // TODO
 
-  Iterable<String>? get keys => _box.keys as Iterable<String>?;
+  Iterable<dynamic> get keys => _box.keys;
 
   void remove(String key) => _box.delete(key);
   Future<void> close() async => _box.close();

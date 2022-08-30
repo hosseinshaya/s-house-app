@@ -19,6 +19,7 @@ class ItemAdapter extends TypeAdapter<Item> {
     return Item(
       imageIndex: fields[1] as int?,
     )
+      ..name = fields[0] as MultiLangText
       ..color = fields[2] as ItemColor?
       ..pin = fields[3] as String?;
   }

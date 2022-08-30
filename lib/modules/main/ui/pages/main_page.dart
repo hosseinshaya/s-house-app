@@ -2,12 +2,16 @@ import 'package:dough/dough.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:s_house/common/constants/app_config.dart';
 import 'package:s_house/common/localization/locale_keys.g.dart';
 import 'package:s_house/common/router/app_router.dart';
 import 'package:s_house/common/styles/colorPalette/color_palette.dart';
 import 'package:s_house/common/uikit/menu/cin_menu.dart';
 import 'package:s_house/common/utils/locale_helper.dart';
+import 'package:s_house/shared/items/blocs/items_bloc.dart';
+import 'package:s_house/shared/items/models/item.dart';
+import 'package:s_house/shared/items/ui/widgets/item_tile.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -88,16 +92,21 @@ class MainPage extends StatelessWidget {
                 ),
               ),
             ),
-            GridView.count(
-              padding: const EdgeInsets.symmetric(horizontal: 35),
-              crossAxisCount: 2,
-              childAspectRatio: 1 / 1,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
-              controller: ScrollController(keepScrollOffset: false),
-              shrinkWrap: true,
-              children: [],
-            )
+            Selector<ItemsBloc, List<Item>?>(
+                selector: (context, bloc) => bloc.items,
+                builder: (context, items, child) {
+                  return GridView.count(
+                    padding: const EdgeInsets.symmetric(horizontal: 35),
+                    crossAxisCount: 2,
+                    childAspectRatio: 1 / 1,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 20,
+                    controller: ScrollController(keepScrollOffset: false),
+                    shrinkWrap: true,
+                    children: List<Widget>.from(
+                        (items ?? []).map((e) => ItemTile(e))),
+                  );
+                })
           ],
         ),
       );

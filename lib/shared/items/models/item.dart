@@ -8,7 +8,7 @@ part 'item.g.dart';
 @HiveType(typeId: HiveId.item)
 class Item extends HiveObject {
   @HiveField(0)
-  final MultiLangText name = MultiLangText();
+  MultiLangText name = MultiLangText();
   @HiveField(1)
   int? imageIndex;
   @HiveField(2)
