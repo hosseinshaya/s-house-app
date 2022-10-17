@@ -147,8 +147,8 @@ class AddItemModal extends StatelessWidget {
                     CinButton(
                       margin: const EdgeInsets.all(12),
                       text: LocaleKeys.items_submit.tr(),
-                      enabled: context.select<AddItemBloc, bool>(
-                          (bloc) => bloc.isSubmitEnabled),
+                      // enabled: context.select<AddItemBloc, bool>(
+                      //     (bloc) => bloc.isSubmitEnabled),
                       onPressed: () async {
                         context.read<AddItemBloc>().submit();
                         Navigator.of(context).pop();

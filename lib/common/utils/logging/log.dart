@@ -18,11 +18,15 @@ class Log {
     logger.w(message, error, stackTrace);
   }
 
-  static void d(dynamic message, [dynamic error, StackTrace? stackTrace]) => logger.d(message, error, stackTrace);
+  static void d(dynamic message, [dynamic error, StackTrace? stackTrace]) =>
+      logger.d(message, error, stackTrace);
 
-  static void i(dynamic message, [dynamic error, StackTrace? stackTrace]) => logger.i(message, error, stackTrace);
+  static void i(dynamic message, [dynamic error, StackTrace? stackTrace]) =>
+      logger.i(message, error, stackTrace);
 
-  static void v(dynamic message, [dynamic error, StackTrace? stackTrace]) => logger.v(message, error, stackTrace);
+  static void v(dynamic message, [dynamic error, StackTrace? stackTrace]) =>
+      logger.v(message, error, stackTrace);
 
-  static void wtf(dynamic message, [dynamic error, StackTrace? stackTrace]) => logger.wtf(message, error, stackTrace);
+  static void wtf(dynamic message, [dynamic error, StackTrace? stackTrace]) =>
+      logger.wtf(message, error, stackTrace);
 }
