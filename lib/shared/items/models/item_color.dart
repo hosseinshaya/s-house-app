@@ -1,30 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:s_house/common/constants/hive_id.dart';
 import 'package:s_house/common/styles/colorPalette/color_palette.dart';
+// ignore: depend_on_referenced_packages
+import 'package:json_annotation/json_annotation.dart';
+import 'package:s_house/common/utils/color_helper.dart';
+import 'package:s_house/common/utils/string_helper.dart';
 
 part 'item_color.g.dart';
 
-@HiveType(typeId: HiveId.itemColor)
+@JsonSerializable(explicitToJson: true)
 class ItemColor {
-  ItemColor(this.main, this.light, this.dark, this.background);
+  ItemColor(
+      {required this.main,
+      required this.light,
+      required this.dark,
+      required this.background});
+
+  factory ItemColor.fromJson(Map<String, dynamic> json) =>
+      _$ItemColorFromJson(json);
 
   factory ItemColor.fromColorMode(ColorMode colorMode) => ItemColor(
-        colorMode.main,
-        colorMode.light,
-        colorMode.dark,
-        colorMode.background,
+        main: colorMode.main,
+        light: colorMode.light,
+        dark: colorMode.dark,
+        background: colorMode.background,
       );
 
   ColorMode toColorMode() =>
       ColorMode(main: main, light: light, dark: dark, background: background);
 
-  @HiveField(0)
+  @ColorConverter()
   final Color main;
-  @HiveField(1)
+  @ColorConverter()
   final Color light;
-  @HiveField(2)
+  @ColorConverter()
   final Color dark;
-  @HiveField(3)
+  @ColorConverter()
   final Color background;
+
+  Map<String, dynamic> toJson() => _$ItemColorToJson(this);
+}
+
+class ColorConverter implements JsonConverter<Color, String> {
+  const ColorConverter();
+
+  @override
+  Color fromJson(String json) => json.toColor();
+
+  @override
+  String toJson(Color object) => object.toHexString();
 }

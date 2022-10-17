@@ -41,7 +41,7 @@ class ItemTile extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(right: 8.0),
                     child: Text(
-                          item.name.tr(context),
+                          item.trName(context),
                           style: context.textTheme.headline6?.copyWith(
                               fontWeight: FontWeight.w700,
                               color: context.colors.white),

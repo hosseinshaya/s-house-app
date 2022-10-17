@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:s_house/common/box/base_box.dart';
 import 'package:s_house/common/utils/logging/log.dart';
 import 'package:s_house/common/utils/logging/log_helper.dart';
+import 'package:s_house/objectbox.g.dart';
 import 'package:s_house/shared/items/models/item.dart';
 
 class ItemsBloc extends ChangeNotifier {
@@ -9,8 +9,8 @@ class ItemsBloc extends ChangeNotifier {
 
   ItemsBloc._init() {
     init().then((_) async {
-      Log.wtf('length is ${itemsBox.length}');
-      items = itemsBox.values.toList();
+      Log.wtf('count is ${box.count()}');
+      items = box.getAll();
     });
   }
 
@@ -18,13 +18,14 @@ class ItemsBloc extends ChangeNotifier {
 
   Future<void> init() async {
     try {
-      await itemsBox.open();
+      final store = await openStore();
+      box = store.box<Item>();
     } catch (e) {
       e.log();
     }
   }
 
-  final BaseBox<Item> itemsBox = BaseBox<Item>(Item.boxName);
+  late Box<Item> box;
 
   List<Item>? _items;
   List<Item>? get items => _items;
@@ -33,9 +34,9 @@ class ItemsBloc extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> add(Item item) async {
-    await itemsBox.put(item.key, item);
-    Log.wtf('length is ${itemsBox.length}');
-    items = itemsBox.values.toList();
+  void add(Item item) {
+    box.put(item);
+    // Log.wtf('length is ${itemsBox.length}');
+    items = box.getAll();
   }
 }

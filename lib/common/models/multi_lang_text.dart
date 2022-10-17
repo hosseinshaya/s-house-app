@@ -1,18 +1,22 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:s_house/common/constants/hive_id.dart';
+// ignore: depend_on_referenced_packages
+import 'package:json_annotation/json_annotation.dart';
 
 part 'multi_lang_text.g.dart';
 
-@HiveType(typeId: HiveId.multiLangText)
-class MultiLangText {
-  @HiveField(0)
+@JsonSerializable(explicitToJson: true)
+class MultiLangText{
+  int id;
   String? fa;
-  @HiveField(1)
   String? en;
 
-  MultiLangText({this.fa, this.en});
+  factory MultiLangText.fromJson(Map<String, dynamic> json) =>
+      _$MultiLangTextFromJson(json);
+
+  MultiLangText({this.id = 0, this.fa, this.en});
+
+  Map<String, dynamic> toJson() => _$MultiLangTextToJson(this);
 
   String tr(BuildContext context) {
     switch (context.locale.languageCode) {

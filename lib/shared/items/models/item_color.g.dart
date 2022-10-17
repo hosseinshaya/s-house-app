@@ -3,48 +3,19 @@
 part of 'item_color.dart';
 
 // **************************************************************************
-// TypeAdapterGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class ItemColorAdapter extends TypeAdapter<ItemColor> {
-  @override
-  final int typeId = 2;
-
-  @override
-  ItemColor read(BinaryReader reader) {
-    final numOfFields = reader.readByte();
-    final fields = <int, dynamic>{
-      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
-    };
-    return ItemColor(
-      fields[0] as Color,
-      fields[1] as Color,
-      fields[2] as Color,
-      fields[3] as Color,
+ItemColor _$ItemColorFromJson(Map<String, dynamic> json) => ItemColor(
+      main: const ColorConverter().fromJson(json['main'] as String),
+      light: const ColorConverter().fromJson(json['light'] as String),
+      dark: const ColorConverter().fromJson(json['dark'] as String),
+      background: const ColorConverter().fromJson(json['background'] as String),
     );
-  }
 
-  @override
-  void write(BinaryWriter writer, ItemColor obj) {
-    writer
-      ..writeByte(4)
-      ..writeByte(0)
-      ..write(obj.main)
-      ..writeByte(1)
-      ..write(obj.light)
-      ..writeByte(2)
-      ..write(obj.dark)
-      ..writeByte(3)
-      ..write(obj.background);
-  }
-
-  @override
-  int get hashCode => typeId.hashCode;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ItemColorAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
-}
+Map<String, dynamic> _$ItemColorToJson(ItemColor instance) => <String, dynamic>{
+      'main': const ColorConverter().toJson(instance.main),
+      'light': const ColorConverter().toJson(instance.light),
+      'dark': const ColorConverter().toJson(instance.dark),
+      'background': const ColorConverter().toJson(instance.background),
+    };

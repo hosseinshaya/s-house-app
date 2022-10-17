@@ -13,18 +13,18 @@ class AddItemBloc extends ChangeNotifier {
   Item selectedItem = Item();
 
   bool get isSubmitEnabled =>
-      selectedItem.name.fa != null &&
-      selectedItem.name.en != null &&
+      selectedItem.faName != null &&
+      selectedItem.enName != null &&
       selectedItem.imageIndex != null &&
       selectedItem.color != null;
 
   set faName(String? value) {
-    selectedItem.name.fa = value;
+    selectedItem.faName = value;
     notifyListeners();
   }
 
   set enName(String? value) {
-    selectedItem.name.en = value;
+    selectedItem.enName = value;
     notifyListeners();
   }
 

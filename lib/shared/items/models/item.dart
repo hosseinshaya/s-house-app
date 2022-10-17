@@ -1,22 +1,42 @@
+import 'dart:convert';
+
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:s_house/common/constants/hive_id.dart';
-import 'package:s_house/common/models/multi_lang_text.dart';
+import 'package:objectbox/objectbox.dart';
+import 'package:s_house/objectbox.g.dart';
 import 'package:s_house/shared/items/models/item_color.dart';
 
-part 'item.g.dart';
-
-@HiveType(typeId: HiveId.item)
+@Entity()
 class Item extends HiveObject {
-  @HiveField(0)
-  MultiLangText name = MultiLangText();
-  @HiveField(1)
+  Item(
+      {this.id = 0,
+      this.imageIndex});
+
+  int id;
+  String? faName;
+  String? enName;
   int? imageIndex;
-  @HiveField(2)
-  ItemColor? color;
-  @HiveField(3)
+  String? colorJson;
   String? pin;
 
-  static const String boxName = 'itemsBox';
+  String trName(BuildContext context) {
+    switch (context.locale.languageCode) {
+      case 'fa':
+        return faName!;
+      case 'en':
+        return enName!;
+      default:
+        return faName!;
+    }
+  }
 
-  Item({this.imageIndex});
+  set color(ItemColor? value) {
+    colorJson = value?.toJson().toString();
+  }
+
+  ItemColor? get color =>
+      colorJson == null ? null : ItemColor.fromJson(json.decode(colorJson!));
+
+  static const String boxName = 'itemsBox';
 }
