@@ -104,7 +104,7 @@ class MainPage extends StatelessWidget {
                   selector: (context, bloc) => bloc.items,
                   builder: (context, items, child) {
                     return GridView.count(
-                      padding: const EdgeInsets.symmetric(horizontal: 35),
+                      padding: const EdgeInsets.fromLTRB(35, 0, 35, 35),
                       crossAxisCount: 2,
                       childAspectRatio: 1 / 1,
                       crossAxisSpacing: 20,
