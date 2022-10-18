@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:cookie_jar/cookie_jar.dart';
@@ -18,7 +19,8 @@ class ApiClient {
         baseUrl: AppConfig.baseUrl,
         contentType: 'application/json',
         headers: {
-          // if ((AuthBloc().accessToken ?? '') != '') 'Authorization': 'Bearer ${AuthBloc().accessToken}', // todo
+          'authorization': 'Basic ${base64Encode(
+                  utf8.encode('${AppConfig.username}:${AppConfig.password}'))}'
         },
         validateStatus: (int? status) => (status ?? 0) < 500,
       ),

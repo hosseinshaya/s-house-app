@@ -7,4 +7,7 @@ part 'retrofit_client.g.dart';
 @RestApi(baseUrl: AppConfig.baseUrl)
 abstract class RetrofitClient {
   factory RetrofitClient(Dio dio, {String baseUrl}) = _RetrofitClient;
+
+  @POST('/toggleLight')
+  Future<void> toggleLight({@Field('key') required int key});
 }

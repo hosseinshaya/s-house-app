@@ -38,7 +38,7 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(3, 7557365022652929584),
             name: 'pin',
-            type: 9,
+            type: 6,
             flags: 0),
         ModelProperty(
             id: const IdUid(6, 2828573854745087832),
@@ -102,8 +102,6 @@ ModelDefinition getObjectBoxModel() {
           object.id = id;
         },
         objectToFB: (Item object, fb.Builder fbb) {
-          final pinOffset =
-              object.pin == null ? null : fbb.writeString(object.pin!);
           final colorJsonOffset = object.colorJson == null
               ? null
               : fbb.writeString(object.colorJson!);
@@ -114,7 +112,7 @@ ModelDefinition getObjectBoxModel() {
           fbb.startTable(9);
           fbb.addInt64(0, object.id);
           fbb.addInt64(1, object.imageIndex);
-          fbb.addOffset(2, pinOffset);
+          fbb.addInt64(2, object.pin);
           fbb.addOffset(5, colorJsonOffset);
           fbb.addOffset(6, faNameOffset);
           fbb.addOffset(7, enNameOffset);
@@ -129,8 +127,8 @@ ModelDefinition getObjectBoxModel() {
               id: const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0),
               imageIndex: const fb.Int64Reader()
                   .vTableGetNullable(buffer, rootOffset, 6))
-            ..pin = const fb.StringReader(asciiOptimization: true)
-                .vTableGetNullable(buffer, rootOffset, 8)
+            ..pin =
+                const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 8)
             ..colorJson = const fb.StringReader(asciiOptimization: true)
                 .vTableGetNullable(buffer, rootOffset, 14)
             ..faName = const fb.StringReader(asciiOptimization: true)
@@ -155,7 +153,7 @@ class Item_ {
       QueryIntegerProperty<Item>(_entities[0].properties[1]);
 
   /// see [Item.pin]
-  static final pin = QueryStringProperty<Item>(_entities[0].properties[2]);
+  static final pin = QueryIntegerProperty<Item>(_entities[0].properties[2]);
 
   /// see [Item.colorJson]
   static final colorJson =

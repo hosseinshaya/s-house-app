@@ -3,7 +3,11 @@ import 'dart:ui';
 class AppConfig {
   static const String name = 'S House';
 
-  static const String baseUrl = 'https://api.paybuy.ir/';
+  static const String baseUrl = 'http://192.168.1.184';
+
+  static const String username = 'ShahanSharkDoDooDoDooDoDooo';
+
+  static const String password = 'ldVOhVb&TVze3SiQp78h^Q0H8Hi^8';
 
   static const bool debug = true;
 

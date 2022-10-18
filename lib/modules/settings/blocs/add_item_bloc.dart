@@ -28,6 +28,11 @@ class AddItemBloc extends ChangeNotifier {
     notifyListeners();
   }
 
+  set pin(int? value) {
+    selectedItem.pin = value;
+    notifyListeners();
+  }
+
   set imageIndex(int? value) {
     selectedItem.imageIndex = value;
     notifyListeners();

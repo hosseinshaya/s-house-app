@@ -17,7 +17,7 @@ class Item extends HiveObject {
   String? enName;
   int? imageIndex;
   String? colorJson;
-  String? pin;
+  int? pin;
 
   String trName(BuildContext context) {
     switch (context.locale.languageCode) {

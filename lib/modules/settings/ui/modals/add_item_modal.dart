@@ -56,8 +56,9 @@ class AddItemModal extends StatelessWidget {
                           CinTextField(
                             name: 'pin',
                             label: LocaleKeys.items_form_pin.tr(),
+                            keyboardType: TextInputType.number,
                             onChanged: (text) {
-                              // context.read<AddItemBloc>().enName = text;
+                              context.read<AddItemBloc>().pin = int.tryParse(text ?? '');
                             },
                           ),
                         ],
@@ -147,8 +148,8 @@ class AddItemModal extends StatelessWidget {
                     CinButton(
                       margin: const EdgeInsets.all(12),
                       text: LocaleKeys.items_submit.tr(),
-                      // enabled: context.select<AddItemBloc, bool>(
-                      //     (bloc) => bloc.isSubmitEnabled),
+                      enabled: context.select<AddItemBloc, bool>(
+                          (bloc) => bloc.isSubmitEnabled),
                       onPressed: () async {
                         context.read<AddItemBloc>().submit();
                         Navigator.of(context).pop();
