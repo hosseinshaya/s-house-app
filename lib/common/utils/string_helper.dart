@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 
 extension StringUtils on String {
   String toLocalNumbers(BuildContext context) =>
-      context.locale.toString() == 'fa' ? toPersianNumbers() : toEnglishNumbers();
+      context.locale.toString() == 'fa'
+          ? toPersianNumbers()
+          : toEnglishNumbers();
 
   String toPersianNumbers() => replaceAll('1', '۱')
       .replaceAll('2', '۲')
@@ -44,7 +46,18 @@ extension StringUtils on String {
     }
   }
 
-  Color toColor() => Color(int.parse(replaceAll('#', 'ff'), radix: 16));
+  // Color toColor() => Color(int.parse(replaceAll('#', 'ff'), radix: 16));
+  Color toColor() {
+    var hexColor = this.replaceAll("#", "");
+    if (hexColor.length == 6) {
+      hexColor = "FF" + hexColor;
+    }
+    if (hexColor.length == 8) {
+      return Color(int.parse("0x$hexColor"));
+    } else {
+      return Colors.transparent;
+    }
+  }
 
   String cardNumberFormatter() {
     RegExp reg = RegExp(r'(\d{1,4})(?=(\d{4})+(?!\d))');

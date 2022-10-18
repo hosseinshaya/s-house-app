@@ -9,7 +9,7 @@ class ItemsBloc extends ChangeNotifier {
 
   ItemsBloc._init() {
     init().then((_) async {
-      Log.wtf('count is ${box.count()}');
+      // Log.wtf('count is ${box.count()}');
       items = box.getAll();
     });
   }
@@ -31,9 +31,6 @@ class ItemsBloc extends ChangeNotifier {
   List<Item>? get items => _items;
   set items(List<Item>? value) {
     _items = value;
-    for (final item in _items ?? []) {
-      item.color?.toJson().wtfLog();
-    }
     notifyListeners();
   }
 

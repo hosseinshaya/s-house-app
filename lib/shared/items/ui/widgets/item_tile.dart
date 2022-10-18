@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:s_house/common/styles/appTheme/app_theme_helper.dart';
+import 'package:s_house/common/styles/colorPalette/color_palette.dart';
 import 'package:s_house/common/styles/colorPalette/color_palette_helper.dart';
 import 'package:s_house/shared/items/constants/light_images.dart';
 import 'package:s_house/shared/items/models/item.dart';
@@ -26,9 +27,9 @@ class ItemTile extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Container(
-                  alignment: Alignment.topRight,
+                  alignment: AlignmentDirectional.topStart,
                   child: SvgPicture.asset(
-                    LightImages.getPath(index: item.imageIndex ?? -1),
+                    LightImages.getPath(index: item.imageIndex! + 1),
                     height: 50,
                     width: 50,
                   ),
@@ -37,14 +38,21 @@ class ItemTile extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Container(
-                  alignment: Alignment.centerRight,
+                  alignment: AlignmentDirectional.centerStart,
                   child: Padding(
                     padding: const EdgeInsets.only(right: 8.0),
                     child: Text(
                       item.trName(context),
                       style: context.textTheme.headline6?.copyWith(
                           fontWeight: FontWeight.w700,
-                          color: context.colors.white),
+                          color: (item.color
+                                          ?.toColorMode()
+                                          .main
+                                          .computeLuminance() ??
+                                      0) >
+                                  0.5
+                              ? Colors.blueGrey[900]
+                              : context.colors.white),
                     ),
                   ),
                 ),
