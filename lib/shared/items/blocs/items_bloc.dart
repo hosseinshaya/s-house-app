@@ -39,4 +39,9 @@ class ItemsBloc extends ChangeNotifier {
     // Log.wtf('length is ${itemsBox.length}');
     items = box.getAll();
   }
+
+  void remove(int id) {
+    box.remove(id);
+    items = box.getAll();
+  }
 }

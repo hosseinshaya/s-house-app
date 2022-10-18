@@ -20,6 +20,7 @@ abstract class  LocaleKeys {
   static const common_clearAll = 'common.clearAll';
   static const common_applyFilter = 'common.applyFilter';
   static const common_enter = 'common.enter';
+  static const common_gender_unspecified = 'common.gender.unspecified';
   static const common_gender = 'common.gender';
   static const common_datePicker_cancel = 'common.datePicker.cancel';
   static const common_datePicker_confirm = 'common.datePicker.confirm';
@@ -73,6 +74,10 @@ abstract class  LocaleKeys {
   static const items_form_enNameHint = 'items.form.enNameHint';
   static const items_form_pin = 'items.form.pin';
   static const items_form = 'items.form';
+  static const items_remove_title = 'items.remove.title';
+  static const items_remove_subtitle = 'items.remove.subtitle';
+  static const items_remove_buttonTitle = 'items.remove.buttonTitle';
+  static const items_remove = 'items.remove';
   static const items = 'items';
 
 }

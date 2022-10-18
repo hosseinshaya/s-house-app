@@ -85,6 +85,11 @@
       "enName": "نام انگلیسی",
       "enNameHint": "مثلا \"Kitchen Light\"",
       "pin": "پین"
+    },
+    "remove": {
+      "title": "مطمئنی؟",
+      "subtitle": "برای حذف این آيتم مطمئنی؟",
+      "buttonTitle": "حذف کن"
     }
   }
 }

@@ -85,6 +85,11 @@
       "enName": "English name",
       "enNameHint": "For example \"Kitchen Light\"",
       "pin": "Pin"
+    },
+     "remove": {
+      "title": "Sure?",
+      "subtitle": "Are you sure to delete this item?",
+      "buttonTitle": "Delete"
     }
   }
 }

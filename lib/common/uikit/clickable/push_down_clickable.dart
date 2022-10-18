@@ -5,18 +5,20 @@ class PushDownClickable extends StatefulWidget {
     required this.onTap,
     required this.child,
     Key? key,
-    this.duration = const Duration(milliseconds: 130),
+    this.duration = const Duration(milliseconds: 130), this.onLongPress,
   }) : super(key: key);
 
   final Widget child;
   final GestureTapCallback? onTap;
   final Duration duration;
+  final GestureLongPressCallback? onLongPress;
 
   @override
   _PushDownClickableState createState() => _PushDownClickableState();
 }
 
-class _PushDownClickableState extends State<PushDownClickable> with SingleTickerProviderStateMixin {
+class _PushDownClickableState extends State<PushDownClickable>
+    with SingleTickerProviderStateMixin {
   late double _scale;
   late AnimationController _controller;
 
@@ -43,7 +45,8 @@ class _PushDownClickableState extends State<PushDownClickable> with SingleTicker
   }
 
   void _onTapUp(TapUpDetails details) {
-    Future.delayed(Duration(milliseconds: widget.duration.inMilliseconds + 20), () {
+    Future.delayed(Duration(milliseconds: widget.duration.inMilliseconds + 20),
+        () {
       _controller.reverse();
     });
   }
@@ -56,6 +59,7 @@ class _PushDownClickableState extends State<PushDownClickable> with SingleTicker
   Widget build(BuildContext context) {
     _scale = 1 - _controller.value;
     return GestureDetector(
+      onLongPress: widget.onLongPress,
       behavior: HitTestBehavior.opaque,
       onTapDown: widget.onTap == null ? null : _onTapDown,
       onTapUp: widget.onTap == null ? null : _onTapUp,
