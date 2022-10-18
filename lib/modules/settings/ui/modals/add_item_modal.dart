@@ -153,7 +153,6 @@ class AddItemModal extends StatelessWidget {
                       onPressed: () async {
                         context.read<AddItemBloc>().submit();
                         Navigator.of(context).pop();
-                        context.pop();
                       },
                     ),
                   ],
